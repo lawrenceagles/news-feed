@@ -4,14 +4,17 @@ import PropTypes from "prop-types";
 
 const News = ({ postID }) => {
 	const [ post, setPost ] = useState({});
-	useEffect(() => {
-		const getPost = async () => {
-			const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/${postID}`);
-			setPost(data);
-		};
+	useEffect(
+		() => {
+			const getPost = async () => {
+				const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/?id=${postID}`);
+				setPost(data[0]);
+			};
 
-		getPost();
-	});
+			getPost();
+		},
+		[ postID ]
+	);
 	return (
 		<div>
 			<h3>{post && post.title}</h3>

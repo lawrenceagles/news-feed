@@ -17,10 +17,10 @@ const App = () => {
 					<News postID={1} />
 				</div>
 				<div className='bg-success text-center col-sm-12 col-md-4'>
-					<Users />
+					<Users userID={4} />
 				</div>
 				<div className='bg-warning text-center col-sm-12 col-md-4'>
-					<Comments />
+					<Comments commentID={3} />
 				</div>
 			</div>
 		</div>
