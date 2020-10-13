@@ -3,11 +3,12 @@ import axios from "axios";
 import PropTypes from "prop-types";
 
 const Users = ({ userID }) => {
+	const URL = `https://jsonplaceholder.typicode.com/users?id=${userID}`;
 	const [ user, setUser ] = useState({});
 	useEffect(
 		() => {
 			const getUser = async () => {
-				const { data } = await axios.get(`https://jsonplaceholder.typicode.com/users?id=${userID}`);
+				const { data } = await axios.get(URL);
 				setUser(data[0]);
 			};
 

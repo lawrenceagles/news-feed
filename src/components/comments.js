@@ -3,11 +3,12 @@ import axios from "axios";
 import PropTypes from "prop-types";
 
 const Comments = ({ commentID }) => {
+	const URL = `https://jsonplaceholder.typicode.com/comments?id=${commentID}`;
 	const [ comment, setComment ] = useState({});
 	useEffect(
 		() => {
 			const getComment = async () => {
-				const { data } = await axios.get(`https://jsonplaceholder.typicode.com/comments?id=${commentID}`);
+				const { data } = await axios.get(URL);
 				setComment(data[0]);
 			};
 

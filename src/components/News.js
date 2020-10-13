@@ -3,11 +3,12 @@ import axios from "axios";
 import PropTypes from "prop-types";
 
 const News = ({ postID }) => {
+	const URL = `https://jsonplaceholder.typicode.com/posts/?id=${postID}`;
 	const [ post, setPost ] = useState({});
 	useEffect(
 		() => {
 			const getPost = async () => {
-				const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/?id=${postID}`);
+				const { data } = await axios.get(URL);
 				setPost(data[0]);
 			};
 
