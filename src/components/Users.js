@@ -1,21 +1,10 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import PropTypes from "prop-types";
+import useFetch from "../effects/useFetch";
 
 const Users = ({ userID }) => {
 	const URL = `https://jsonplaceholder.typicode.com/users?id=${userID}`;
-	const [ user, setUser ] = useState({});
-	useEffect(
-		() => {
-			const getUser = async () => {
-				const { data } = await axios.get(URL);
-				setUser(data[0]);
-			};
-
-			getUser();
-		},
-		[ userID ]
-	);
+	const user = useFetch(URL, userID);
 	return (
 		<div className='text-white'>
 			<p className='py-2'>{user && user.username}</p>

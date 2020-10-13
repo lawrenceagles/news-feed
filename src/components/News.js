@@ -1,21 +1,10 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import PropTypes from "prop-types";
+import useFetch from "../effects/useFetch";
 
 const News = ({ postID }) => {
 	const URL = `https://jsonplaceholder.typicode.com/posts/?id=${postID}`;
-	const [ post, setPost ] = useState({});
-	useEffect(
-		() => {
-			const getPost = async () => {
-				const { data } = await axios.get(URL);
-				setPost(data[0]);
-			};
-
-			getPost();
-		},
-		[ postID ]
-	);
+	const post = useFetch(URL, postID);
 	return (
 		<div className='text-white'>
 			<h3 className='py-2'>{post && post.title}</h3>
