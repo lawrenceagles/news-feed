@@ -16,9 +16,10 @@ const News = ({ postID }) => {
 		[ postID ]
 	);
 	return (
-		<div>
-			<h3>{post && post.title}</h3>
-			<p>{post && post.body}</p>
+		<div className='text-white'>
+			<h3 className='py-2'>{post && post.title}</h3>
+			<p className='py-2'>{post && post.body}</p>
+			<h4>Featured Post</h4>
 		</div>
 	);
 };

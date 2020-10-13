@@ -16,10 +16,11 @@ const Comments = ({ commentID }) => {
 		[ commentID ]
 	);
 	return (
-		<div>
-			<p>{comment && comment.name}</p>
-			<p>{comment && comment.email}</p>
-			<p>{comment && comment.body}</p>
+		<div className='text-white'>
+			<p className='py-2'>{comment && comment.name}</p>
+			<p className='py-2'>{comment && comment.email}</p>
+			<p className='py-2'>{comment && comment.body}</p>
+			<h4>Featured Comment</h4>
 		</div>
 	);
 };

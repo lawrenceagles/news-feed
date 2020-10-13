@@ -16,11 +16,12 @@ const Users = ({ userID }) => {
 		[ userID ]
 	);
 	return (
-		<div>
-			<p>{user && user.username}</p>
-			<p>{user && user.name}</p>
-			<p>{user && user.email}</p>
-			<p>{user && user.phone}</p>
+		<div className='text-white'>
+			<p className='py-2'>{user && user.username}</p>
+			<p className='py-2'>{user && user.name}</p>
+			<p className='py-2'>{user && user.email}</p>
+			<p className='py-2'>{user && user.phone}</p>
+			<h4>Featured User</h4>
 		</div>
 	);
 };

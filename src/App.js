@@ -8,19 +8,27 @@ import Comments from "./components/comments";
 
 const App = () => {
 	return (
-		<div className='container-fluid'>
+		<div className='container vh-100 d-flex flex-column justify-content-center align-items-center'>
 			<div className='row'>
-				<h2 className='text-center mx-auto mt-2 mb-4'>News Feed Home</h2>
+				<h1 className='text-center mx-auto mt-2 mb-4'>Featured Feed</h1>
 			</div>
 			<div className='row'>
-				<div className='bg-primary text-center col-sm-12 col-md-4'>
-					<News postID={1} />
+				<div class='card bg-primary text-center col-md-12 col-lg-4'>
+					<div class='card-body'>
+						<News postID={1} />
+					</div>
 				</div>
-				<div className='bg-success text-center col-sm-12 col-md-4'>
-					<Users userID={4} />
+
+				<div class='card bg-success text-center col-md-12 col-lg-4'>
+					<div class='card-body'>
+						<Users userID={4} />
+					</div>
 				</div>
-				<div className='bg-warning text-center col-sm-12 col-md-4'>
-					<Comments commentID={3} />
+
+				<div class='card bg-danger text-center col-md-12 col-lg-4'>
+					<div class='card-body'>
+						<Comments commentID={3} />
+					</div>
 				</div>
 			</div>
 		</div>
