@@ -14,7 +14,7 @@ const App = () => {
 			</div>
 			<div className='row'>
 				<div className='bg-primary text-center col-sm-12 col-md-4'>
-					<News />
+					<News postID={1} />
 				</div>
 				<div className='bg-success text-center col-sm-12 col-md-4'>
 					<Users />
